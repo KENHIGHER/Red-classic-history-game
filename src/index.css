@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #12090d;
+  --paper: #f4ebdc;
+  --ink: #171113;
+  --seal: #8b0a14;
+  --gold: #f4c96a;
+
+  font-family: ui-sans-serif, system-ui, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  .font-display {
+    font-family: "Noto Serif SC", ui-serif, serif;
+  }
+
+  body {
+    background: var(--bg);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(1000px 640px at 18% 16%, rgba(139, 10, 20, 0.38), transparent 58%),
+      radial-gradient(900px 680px at 86% 22%, rgba(244, 201, 106, 0.14), transparent 62%),
+      radial-gradient(760px 520px at 52% 92%, rgba(255, 255, 255, 0.06), transparent 58%),
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 6px);
+    mix-blend-mode: screen;
+    opacity: 0.9;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+    opacity: 0.24;
+    mix-blend-mode: overlay;
+  }
+}
